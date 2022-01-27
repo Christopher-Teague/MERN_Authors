@@ -6,7 +6,7 @@ const AuthorSchema = new mongoose.Schema({
         required: [true, "{PATH} must be provided"],
         minlength: [3, "{PATH} must be at least 3 chars long"]
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
 ///// make the objectName schema and export \\\\\
 const Author = mongoose.model("Author", AuthorSchema)

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Main = (props) => {
-
+    ///// loading for ternary rendering when waiting for API response \\\\\
     const [authors, setAuthors] = useState([]);
     const [loaded, setLoaded] = useState(false);
 
@@ -16,11 +16,11 @@ const Main = (props) => {
             })
             .catch(err => console.log(err))
     }, []);
-
+    ///// remove author from DOM after deleted \\\\\
     const removeFromDom = (id) => {
         setAuthors(authors.filter(author => author._id !== id));
     }
-
+    ///// DELETE \\\\\
     const deleteAuthor = (id) => {
         axios.delete('http://localhost:8000/api/authors/' + id)
             .then(res => { removeFromDom(id) })
@@ -45,8 +45,9 @@ const Main = (props) => {
                             <tr key={idx}>
                                 <td>{author.name}</td>
                                 <td><Link to={`/authors/${author._id}/edit`} className='btn btn-primary btn-sm me-5'>edit</Link>
-                                    <button className='btn btn-outline-danger btn-sm'
-                                        onClick={() => { deleteAuthor(author._id) }}>delete</button></td>
+                                    <button onClick={() => { deleteAuthor(author._id) }}
+                                        className='btn btn-outline-danger btn-sm'>delete</button>
+                                </td>
 
                             </tr>
                         )}

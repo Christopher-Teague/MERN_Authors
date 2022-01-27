@@ -1,8 +1,4 @@
-const  Author  = require("../models/author");
-
-// module.exports = {
-
-// **** CRUD **** 28:00 in video - W3D2 - Full-Stack: PART 1 - Server
+const Author = require("../models/author");
 
 ////////// req = request | res = response \\\\\\\\\\
 
@@ -10,7 +6,7 @@ const  Author  = require("../models/author");
 
 module.exports.createAuthor = (req, res) => {
     const { name } = req.body;
-    Author.create({name})
+    Author.create({ name })
         .then(author => res.json(author))
         .catch(err => res.status(400).json(err));
 }
@@ -32,9 +28,9 @@ module.exports.findOneAuthor = (req, res) => {
 ///// UPDATE \\\\\
 
 module.exports.updateAuthor = (req, res) => {
-    Author.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true , runValidators: true} )
+    Author.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
         .then(updatedAuthor => res.json(updatedAuthor))
-        .catch(err => res.status(400).json( err ));
+        .catch(err => res.status(400).json(err));
 }
 
 ///// DELETE \\\\\
@@ -44,4 +40,3 @@ module.exports.deleteAuthor = (req, res) => {
         .then(delAuthor => res.json(delAuthor))
         .catch(err => res.status(400).json({ message: "Error! no author for you!", error: err }));
 }
-// }
