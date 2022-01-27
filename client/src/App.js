@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Main from './views/Main';
 import AddAuthor from './views/AddAuthor';
 import EditAuthor from './views/EditAuthor';
@@ -22,6 +22,10 @@ function App() {
         <Route exact path="/authors">
           <Main />
         </Route>
+
+        <Route path="/">
+          <Redirect to="/authors"/>
+        </Route>  
 
       </Switch>
     </div>
