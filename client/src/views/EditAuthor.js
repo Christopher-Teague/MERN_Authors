@@ -50,7 +50,7 @@ const EditAuthor = (props) => {
     return (
         <div>
             {/* {JSON.stringify(author.name)} */}
-            <Link to="/authors">Home</Link>
+            <Link to="/authors" style={{color: 'dodgerblue'}}>Home</Link>
             <h3 className='mt-3'>edit {author.name}</h3>
             <AuthorForm
                 onSubmitHandler={onSubmitHandler}

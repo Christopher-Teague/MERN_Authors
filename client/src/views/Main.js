@@ -30,10 +30,10 @@ const Main = (props) => {
     return (
         <div className="container-sm">
             {/* {JSON.stringify(authors)} */}
-            <Link to="/authors/new">Add an author</Link>
+            <Link to="/authors/new" style={{color: 'dodgerblue'}}>Add an author</Link>
             <h3>We have quotes by:</h3>
             {loaded ?
-                <table className='table table-striped'>
+                <table className='table table-light table-striped'>
                     <thead>
                         <tr>
                             <th>Author</th>

@@ -33,7 +33,7 @@ const AddAuthor = (props) => {
 
     return (
         <div>
-            <Link to="/authors">Home</Link>
+            <Link to="/authors" style={{color: 'dodgerblue'}}>Home</Link>
             <h3 className='mt-3'>add a new Author</h3>
 
             <AuthorForm onSubmitHandler={onSubmitHandler}

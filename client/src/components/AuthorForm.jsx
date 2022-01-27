@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 
 const AuthorForm = (props) => {
 
+    ///// used to route to main page onClick from button \\\\\
     const history = useHistory();
     ///// Passed from add/edit pages as props \\\\\
     const { onSubmitHandler, name, setName } = props;

@@ -5,9 +5,17 @@ import AddAuthor from './views/AddAuthor';
 import EditAuthor from './views/EditAuthor';
 import './App.css';
 
+const shadowBox = {
+  backgroundColor: 'silver',
+  boxShadow: '5px 5px 5px black',
+  borderRadius: '8px'
+
+
+}
+
 function App() {
   return (
-    <div className="App container">
+    <div className="App container mt-5 p-4" style={shadowBox}>
       <h1>Favorite Authors</h1>
       <Switch>
 
